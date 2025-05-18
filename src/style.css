@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "vazir";
+  src: url("assets/fonts/vazir.woff2") format("woff2");
+}
+
+@import "tailwindcss";
+
+html {
+  direction: rtl;
+  font-family: "vazir", sans-serif;
+}
