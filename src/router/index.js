@@ -24,11 +24,17 @@ export const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // Always scroll to top smoothly
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ top: 0, behavior: "smooth" });
-      }, 100);
-    });
+    // If navigating between product description and comments tab
+    if (
+      to.path.startsWith("/products/") &&
+      from.path.startsWith("/products/") &&
+      (to.path.endsWith("/comments") || from.path.endsWith("/comments"))
+    ) {
+      // Don't scroll here, we'll handle it in component
+      return false;
+    }
+
+    // Default scroll to top for all other routes
+    return { top: 0, behavior: "smooth" };
   },
 });
