@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2" id="comments">
+  <div class="p-2">
     <div class="pr-2 space-y-2" v-if="comments?.length">
       <div
         class="bg-gray-100 px-2 py-4 rounded-lg"

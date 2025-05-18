@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { computed, watch, onMounted } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 import products from "../assets/product_data.json";
 
@@ -65,26 +65,4 @@ const product = products.find((p) => p.id === productId);
 // isComment and isDescription booleans for the active tab
 const isComments = computed(() => route.path.endsWith("/comments"));
 const isDescription = computed(() => !isComments.value);
-
-const scrollToSection = () => {
-  const sectionId = route.path.endsWith("/comments")
-    ? "comments"
-    : "description";
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
-// When route changes (only inside product page), scroll to appropriate section
-watch(
-  () => route.fullPath,
-  () => {
-    scrollToSection();
-  }
-);
-
-onMounted(() => {
-  scrollToSection();
-});
 </script>
