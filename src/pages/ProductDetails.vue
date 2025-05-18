@@ -59,8 +59,10 @@ import products from "../assets/product_data.json";
 const route = useRoute();
 const productId = route.params.id;
 
+// find the product based on the route param
 const product = products.find((p) => p.id === productId);
 
+// isComment and isDescription booleans for the active tab
 const isComments = computed(() => route.path.endsWith("/comments"));
 const isDescription = computed(() => !isComments.value);
 </script>
