@@ -36,7 +36,6 @@ export const router = createRouter({
       (to.path.endsWith("/comments") || from.path.endsWith("/comments"))
     ) {
       // Don't scroll here
-      console.log("sdfdsfsdf");
       return false;
     }
 
