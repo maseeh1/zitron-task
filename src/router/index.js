@@ -31,11 +31,12 @@ export const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     // If navigating between product description and comments tab
     if (
-      to.path.startsWith("/products/") &&
-      from.path.startsWith("/products/") &&
+      to.path.startsWith("/product/") &&
+      from.path.startsWith("/product/") &&
       (to.path.endsWith("/comments") || from.path.endsWith("/comments"))
     ) {
       // Don't scroll here
+      console.log("sdfdsfsdf");
       return false;
     }
 
