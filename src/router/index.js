@@ -7,16 +7,21 @@ import About from "../pages/About.vue";
 import NotFound from "../pages/NotFound.vue";
 
 const routes = [
+  // default page
   { path: "/", component: ProductList },
+  // product details page with id param
   {
     path: "/product/:id",
     component: ProductDetails,
+    // children for tab changes in the product details page
     children: [
       { path: "", component: ProductDescription },
       { path: "comments", component: ProductComments },
     ],
   },
+  // about page
   { path: "/about", component: About },
+  // 404 page for not found pages
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 
