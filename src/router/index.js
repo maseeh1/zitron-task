@@ -23,4 +23,12 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top smoothly
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ top: 0, behavior: "smooth" });
+      }, 100);
+    });
+  },
 });
