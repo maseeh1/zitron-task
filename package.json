@@ -1,7 +1,7 @@
 {
-  "name": "vue-product-app",
+  "name": "zitron-digikala-task",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
