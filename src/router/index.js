@@ -28,4 +28,18 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // If navigating between product description and comments tab
+    if (
+      to.path.startsWith("/products/") &&
+      from.path.startsWith("/products/") &&
+      (to.path.endsWith("/comments") || from.path.endsWith("/comments"))
+    ) {
+      // Don't scroll here
+      return false;
+    }
+
+    // Default scroll to top for all other routes
+    return { top: 0, behavior: "smooth" };
+  },
 });
