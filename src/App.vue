@@ -1,6 +1,6 @@
 <template>
   <main
-    class="min-h-screen w-full flex flex-col items-center bg-gray-100 font-vazir"
+    class="min-h-screen w-full flex flex-col items-center bg-gray-100 font-vazir px-4 lg:px-0"
     dir="rtl"
   >
     <header class="text-red-600 text-3xl font-bold my-6">
